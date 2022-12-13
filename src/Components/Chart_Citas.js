@@ -46,7 +46,7 @@ function Chart_Citas(props) {
             <div className="row">
                 <div className="col-12">
                     <p className="h3">Citas para el día: {date}</p>
-                    <input type="date" name="" id="" value={filterDay} onChange={(e)=>setFilterDay(e.target.value)}/>
+                    <input className='form-control w-25' type="date" name="" id="" value={filterDay} onChange={(e)=>setFilterDay(e.target.value)}/>
                     <hr />
                 </div>
             </div>
@@ -128,7 +128,7 @@ function Chart_Citas(props) {
                             return (
                                 <div className="row mb-2 d-flex justify-content-evenly">
                                     <span className={`badge text-bg-${colorBadge} d-block text-start p-2 col-9`}>
-                                        <p className=' h6 m-0 lh-1'>{cita.fechaHora.substring(8, 10)}-{cita.fechaHora.substring(5, 7)}-{cita.fechaHora.substring(0, 4)} / {cita.fechaHora.substring(11)}</p>
+                                        <p className=' h5 m-0 lh-1'>{cita.fechaHora.substring(11)} <span className='small'>({cita.status})</span></p>
                                         <hr className='my-1' />
                                         <p className='mb-2'>{cita.paciente}</p>
                                         <p className='m-0 small'>{cita.asunto}</p>
@@ -172,7 +172,7 @@ function Chart_Citas(props) {
                             return (
                                 <div className="row mb-2 d-flex justify-content-evenly">
                                     <span className={`badge text-bg-${colorBadge} d-block text-start p-2 col-9`}>
-                                        <p className=' h6 m-0 lh-1'>{cita.fechaHora.substring(8, 10)}-{cita.fechaHora.substring(5, 7)}-{cita.fechaHora.substring(0, 4)} / {cita.fechaHora.substring(11)}</p>
+                                        <p className=' h5 m-0 lh-1'>{cita.fechaHora.substring(11)} <span className='small'>({cita.status})</span></p>
                                         <hr className='my-1' />
                                         <p className='mb-2'>{cita.paciente}</p>
                                         <p className='m-0 small'>{cita.asunto}</p>
@@ -184,6 +184,7 @@ function Chart_Citas(props) {
                         }
                     })}
                 </div>
+                
                
 
             </div>
