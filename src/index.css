@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.text-bg-orange{
+  background-color: rgb(255, 136, 0);
+}
+
+.nav-pills .nav-link.active{
+  background-color: #30C2E2!important;
+  color: white!important;
+}
+.nav-pills .nav-link{
+  color: #30C2E2!important;
+}

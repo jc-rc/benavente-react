@@ -16,7 +16,7 @@ function App() {
   const [exists, setExists] = useState(true)
 
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault()
 
     //Enviar datos a validar
@@ -40,57 +40,60 @@ function App() {
 
 
       )
-    
-    
-    
+
+
+
   }
 
-  const handleUsernameChange = (e) =>{
-    setUser({...user, username: e.target.value})
+  const handleUsernameChange = (e) => {
+    setUser({ ...user, username: e.target.value })
     setExists(true)
   }
-  const handlePasswordChange = (e) =>{
-    setUser({...user, password: e.target.value})
+  const handlePasswordChange = (e) => {
+    setUser({ ...user, password: e.target.value })
     setExists(true)
   }
 
   return (
 
-    <div className="container-fluid p-4">
+    <div className="container-fluid p-4" style={{backgroundColor: "", maxWidth: 1920}}>
 
-      { !currentUser && <div className="container border" style={{maxWidth: 600}}>
+      {!currentUser && <div className="container  border p-4 rounded" style={{ maxWidth: 400 }}>
         <div className="row">
           <form action="" onSubmit={handleSubmit}>
             <div className="col-12">
-              <p className='h2'>Bienvenido a Benavente</p>
+              <p className="h1 m-0"> <img src="https://www.benaventedental.com.mx/assets/images/logo.svg" className='image-fluid' width={40} height={40} alt="" /> Benavente</p>
+              <p className="small mb-3 fst-italic">Plataforma de Control de Citas</p>
+              <hr />
+              <p className="h4 mb-3">Iniciar Sesión:</p>
             </div>
             <div className='col-12'>
               <label className='form-label' htmlFor="">Usuario</label>
-              <input className='form-control mb-3' type="text" name="" onChange={handleUsernameChange} required value={user.username}/>
+              <input className='form-control mb-3' type="text" name="" onChange={handleUsernameChange} required value={user.username} />
             </div>
             <div className='col-12'>
               <label className='form-label' htmlFor="">Contraseña</label>
-              <input className='form-control mb-3' type="password" name=""  onChange={handlePasswordChange} required value={user.password}/>
+              <input className='form-control mb-3' type="password" name="" onChange={handlePasswordChange} required value={user.password} />
             </div>
             {!exists && <div className="alert alert-danger" role="alert">
               <p className="m-0 fw-bold"><i className="fa-solid fa-triangle-exclamation me-2"></i>Credenciales Inválidas</p>
               <p className="m-0 small">Por favor revise los datos ingresados</p>
             </div>}
 
-            <button className='btn btn-primary'>Ingresar</button>
+            <button className='btn btn-primary col-12 mt-3'>Ingresar</button>
           </form>
-        </div>    
+        </div>
 
       </div>}
 
-      {(currentUser) && (currentUser.role === "PACIENTE") && <View_Paciente nombre={currentUser.nombre}/> }
-      {(currentUser) && (currentUser.role === "MÉDICO") && <View_Medic nombre={currentUser.nombre}/> }
-      {(currentUser) && (currentUser.role === "EMPLEADO") && <View_Recepcion nombre={currentUser.nombre}/> }
-       
-     
+      {(currentUser) && (currentUser.role === "PACIENTE") && <View_Paciente user={currentUser} />}
+      {(currentUser) && (currentUser.role === "MÉDICO") && <View_Medic user={currentUser} />}
+      {(currentUser) && (currentUser.role === "EMPLEADO") && <View_Recepcion user={currentUser} />}
+
+
 
     </div>
-    
+
 
   );
 }
