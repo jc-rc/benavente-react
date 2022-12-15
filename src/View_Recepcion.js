@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Table_Citas from './Components/Table_Citas';
 import Chart_Citas from './Components/Chart_Citas';
+import Chart_Month_Citas from './Components/Chart_Month_Citas';
 
 function View_Recepcion(props) {
 
@@ -93,7 +94,7 @@ function View_Recepcion(props) {
                         <div className="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex="0">
                              <div className="row text-start">
                                 <div className="col-12">
-                                    <p className="h2 mb-4">Opciones</p>
+                                   < Chart_Month_Citas dummy={dummy}/>
                                 </div>
                             </div>
                         </div>

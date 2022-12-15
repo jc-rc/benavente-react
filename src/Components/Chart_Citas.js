@@ -82,7 +82,7 @@ function Chart_Citas(props) {
                                     break;
                             }
                             return (
-                                <div className="row mb-2 d-flex justify-content-evenly">
+                                <div className="row mb-2 d-flex justify-content-evenly" key={key}>
                                     <span className={`badge text-bg-${colorBadge} d-block text-start p-2 col-9`}>
                                         <p className=' h5 m-0 lh-1'>{cita.fechaHora.substring(11)} <span className='small'>({cita.status})</span></p>
                                         <hr className='my-1' />

@@ -13,7 +13,7 @@ code {
 }
 
 .text-bg-orange{
-  background-color: rgb(255, 136, 0);
+  background-color: rgb(255, 136, 0)!important;
 }
 
 .nav-pills .nav-link.active{
@@ -23,3 +23,34 @@ code {
 .nav-pills .nav-link{
   color: #30C2E2!important;
 }
+
+.cita{
+  color: black!important;
+  border: 3 black!important;
+}
+
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: 2px 4px;
+  color: black;
+  text-decoration: none;
+}
+
+.fc .fc-daygrid-day-number {
+  padding: 4px;
+  position: relative;
+  z-index: 4;
+  color: black;
+  text-decoration: none;
+}
+
+.fc .fc-button-primary {
+  background-color: #0d6efd!important;
+  border-color: #0d6efd!important;
+  
+}
+
+/* .fc .fc-view-harness, .fc-view-harness-active {
+  height: 670px !important;
+  max-height: 700px !important;
+} */
