@@ -40,11 +40,11 @@ function View_Recepcion(props) {
 
             <div className="row gx-1">
                 <div className="d-flex align-items-start">
-                    <div className="nav col-1 flex-column nav-pills bg-light py-4 me-3 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical" style={{height:"80vh"}}>
+                    <div className="nav col-1 flex-sm-column flex-row nav-pills bg-light py-4 me-3 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical" style={{height:"80vh"}}>
 
                         <button className="nav-link active text-start p-3" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i className="fa-solid fa-chart-simple me-1"></i> Resumen</button>
-                        <button className="nav-link text-start p-3" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i className="fa-solid fa-address-card me-1"></i> Directorio</button>
                         <button className="nav-link text-start p-3" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false"><i className="fa-solid fa-calendar-check me-1"></i> Citas</button>
+                        <button className="nav-link text-start p-3" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i className="fa-solid fa-address-card me-1"></i> Directorio</button>
                         <button className="nav-link text-start p-3" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i className="fa-solid fa-trophy me-1"></i> Puntos</button>
                         <button className="nav-link text-start p-3" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i className="fa-solid fa-gear me-1"></i> Opciones</button>
                     </div>
@@ -67,6 +67,12 @@ function View_Recepcion(props) {
                                 <div className="col-3 border p-3">
                                     <p className='m-0'>Recuento de Ventas</p>
                                 </div>
+                                <div className="col-6 border p-3">
+                                    <p className='m-0'>Gráficas</p>
+                                </div>
+                                <div className="col-6 border p-3">
+                                    <p className='m-0'>Gráficas</p>
+                                </div>
                             </div>
                         </div>
                         <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex="0">
@@ -87,14 +93,14 @@ function View_Recepcion(props) {
                         <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex="0">
                              <div className="row text-start">
                                 <div className="col-12">
-                                    <Chart_Citas dummy={dummy}></Chart_Citas>
+                                <p className="h2 mb-4">Puntos</p>
                                 </div>
                             </div>
                         </div>
                         <div className="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex="0">
                              <div className="row text-start">
                                 <div className="col-12">
-                                   < Chart_Month_Citas dummy={dummy}/>
+                                <p className="h2 mb-4">Opciones</p>
                                 </div>
                             </div>
                         </div>

@@ -26,7 +26,7 @@ function Form_Citas(props) {
     const handleNewCita = (e) =>{
         e.preventDefault()
         //CREAR CITA EN DB
-        fetch(`https://us-central1.gcp.data.mongodb-api.com/app/benavente-jinwz/endpoint/createCita?fecha=${form.fecha}&hora=${form.hora}&paciente=${form.paciente}&médico=${form.médico}&consultorio=${form.consultorio}&asunto=${form.asunto}&fechaHora=${form.fechaHora}`,
+        fetch(`https://us-central1.gcp.data.mongodb-api.com/app/benavente-jinwz/endpoint/createCita?fecha=${form.fecha}&horaI=${form.horaI}&horaF=${form.horaF}&paciente=${form.paciente}&médico=${form.médico}&consultorio=${form.consultorio}&asunto=${form.asunto}&fechaHora=${form.fechaHora}`,
         {method: "POST"})
         .then(response=> response.json())
         .then(response=> {
@@ -45,8 +45,11 @@ function Form_Citas(props) {
     const handleFecha = (e)=>{
         setForm({...form, fecha: e.target.value})
     }
-    const handleHora = (e)=>{
-        setForm({...form, hora: e.target.value})
+    const handleHoraI = (e)=>{
+        setForm({...form, horaI: e.target.value})
+    }
+    const handleHoraF = (e)=>{
+        setForm({...form, horaF: e.target.value})
     }
     const handleFechaHora = (e)=>{
         setForm({...form, fechaHora: e.target.value})
@@ -74,14 +77,26 @@ function Form_Citas(props) {
                         <form action="" onSubmit={handleNewCita}>
                             <div className="modal-body">
                                 <div className="row">
-                                    <div className="col-12">
+                                    {/* <div className="col-12">
                                         <label className='form-label' htmlFor="">Fecha y Hora:</label>
                                         <input required className='form-control' type="datetime-local"  onChange={handleFechaHora} step="1200" pattern="\d\d\d\d-\d\d-\d\dT([0]?[8-9]|1[0-8]):((0|2|4)0)" title='Cool'/>
-                                    </div>
+                                    </div> */}
                                     {/* <div className="col-6 mb-3">
                                         <label className='form-label' htmlFor="">Hora:</label>
                                         <input className='form-control' type="time"  onChange={handleHora}/>
                                     </div> */}
+                                    <div className="col-12 mb-3">
+                                        <label htmlFor="">Fecha:</label>
+                                        <input type="date" className='form-control' onChange={handleFecha} required />
+                                    </div>
+                                    <div className="col-6 mb-3">
+                                        <label htmlFor="">Hora Inicio:</label>
+                                        <input type="time" id="horaI" className='form-control' step={1200} min={"08:00"} max={"18:00"} onChange={handleHoraI} required/>
+                                    </div>
+                                   {form.horaI && <div className="col-6 mb-3">
+                                        <label htmlFor="">Hora Final:</label>
+                                        <input type="time" id="horaF" className='form-control' step={1200} min={form.horaI} max={"18:40"} onChange={handleHoraF} required/>
+                                    </div>}
                                     <div className="col-12 mb-3">
                                         <label className='form-label' htmlFor="">Paciente:</label>
                                         <select required className='form-select' name="" id="" onChange={handlePaciente}>

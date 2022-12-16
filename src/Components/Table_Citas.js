@@ -63,92 +63,114 @@ function Table_Citas(props) {
                         <button className='btn btn-outline-secondary input-group-text' onClick={handleSearch}><i className="fa-solid fa-magnifying-glass"></i> Buscar</button>
                     </div>
                 </div>
-                
-                <div className="col d-flex justify-content-evenly">
-                    <button className="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#monthView">
-                        <i className="fa-solid fa-calendar-days me-1"></i> MES</button>
-                    <button className="btn btn-secondary " data-bs-toggle="modal" data-bs-target="#todayView">
-                        <i className="fa-solid fa-calendar-day me-1"></i> HOY</button>
-                </div>
+
+
                 <div className="col align-items-center me-2">
                     <button className="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i className="fa-solid fa-circle-plus me-1"></i> Nueva Cita</button>
                 </div>
-            </div>
-            <hr className='my-4' />
-
-
-
-            <div className="col d-flex align-items-start">
-                <p className=" h5 mb-3">Total: {data.length}</p>
+                <hr className='my-4' />
             </div>
 
-            <div className="col-12 px-2">
-                <div className="row  mb-3">
+            {/* NAVEGACIÓN */}
+            <ul class="nav nav-pills mb-3 px-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-calendar-days me-2"></i>Calendario</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-table-list me-2"></i>Listado</button>
+                </li>
+            </ul>
 
-                    <div className="col fw-bold">Fecha y Hora</div>
-                    <div className="col fw-bold">Paciente</div>
-                    <div className="col fw-bold">Médico</div>
-                    <div className="col-1 fw-bold">Sillón</div>
-                    <div className="col fw-bold">Asunto</div>
-                    <div className="col-1 fw-bold">STATUS</div>
-                    <div className="col-1 text-center fw-bold">Editar</div>
-                    <div className="col-1 text-center fw-bold">Borrar</div>
+            {/* CONTENIDO PESTAÑAS */}
+            <div class="tab-content" id="pills-tabContent">
+
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                    <Chart_Month_Citas dummy={props.dummy} data={data} />
                 </div>
-            </div>
+                
 
-            <div className="col-12">
-                <ul className="list-group" style={{ overflowY: "scroll", height: "55vh" }}>
-                    {
-                        data.map((cita, key) => {
-                            let colorBadge = ""
-                            switch (cita.status) {
-                                case "PENDIENTE":
-                                    colorBadge = "orange"
-                                    break;
-                                case "CONFIRMADA":
-                                    colorBadge = "info"
-                                    break;
-                                case "EN PROGRESO":
-                                    colorBadge = "primary"
-                                    break;
-                                case "REALIZADA":
-                                    colorBadge = "success"
-                                    break;
-                                case "NO REALIZADA":
-                                    colorBadge = "warning"
-                                    break;
-                                case "CANCELADA":
-                                    colorBadge = "danger"
-                                    break;
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
 
-                                default:
-                                    break;
-                            }
+                    
+                    <div className="col d-flex align-items-start">
+                        <p className=" h5 mb-3">Total: {data.length}</p>
+                    </div>
 
-                            return (
-                                
-                                <li className='list-group-item py-3' key={key}>
+                    <div className="col-12 px-2">
+                        <div className="row  mb-3">
 
-                                    <div className="row d-flex align-items-center">
-                                        {/* <div className="col-1">{cita.fecha}</div>
+                            <div className="col fw-bold">Fecha y Hora</div>
+                            <div className="col fw-bold">Paciente</div>
+                            <div className="col fw-bold">Médico</div>
+                            <div className="col-1 fw-bold">Sillón</div>
+                            <div className="col fw-bold">Asunto</div>
+                            <div className="col-1 fw-bold">STATUS</div>
+                            <div className="col-1 text-center fw-bold">Editar</div>
+                            <div className="col-1 text-center fw-bold">Borrar</div>
+                        </div>
+                    </div>
+
+                    <div className="col-12">
+                        <ul className="list-group" style={{ overflowY: "scroll", height: "55vh" }}>
+                            {
+                                data.map((cita, key) => {
+                                    let colorBadge = ""
+                                    switch (cita.status) {
+                                        case "PENDIENTE":
+                                            colorBadge = "orange"
+                                            break;
+                                        case "CONFIRMADA":
+                                            colorBadge = "info"
+                                            break;
+                                        case "EN PROGRESO":
+                                            colorBadge = "primary"
+                                            break;
+                                        case "REALIZADA":
+                                            colorBadge = "success"
+                                            break;
+                                        case "NO REALIZADA":
+                                            colorBadge = "warning"
+                                            break;
+                                        case "CANCELADA":
+                                            colorBadge = "danger"
+                                            break;
+
+                                        default:
+                                            break;
+                                    }
+
+                                    return (
+
+                                        <li className='list-group-item py-2' key={key}>
+
+                                            <div className="row  d-flex align-items-center">
+                                                {/* <div className="col-1">{cita.fecha}</div>
                                     <div className="col-1">{cita.hora}</div> */}
 
-                                        <div className="col small">{cita.fechaHora.substring(8, 10)}-{cita.fechaHora.substring(5, 7)}-{cita.fechaHora.substring(0, 4)} / {cita.fechaHora.substring(11)}</div>
-                                        <div className="col small">{cita.paciente}</div>
-                                        <div className="col small">{cita.médico}</div>
-                                        <div className="col-1 small">{cita.consultorio}</div>
-                                        <div className="col small">{cita.asunto}</div>
-                                        <div className="col-1 "><span className={`badge py-2 text-bg-${colorBadge}`}>{cita.status}</span></div>
-                                        <div className="col-1 text-end"><button className='btn btn-outline-secondary'><i className="fa-solid fa-pencil"></i></button></div>
-                                        <div className="col-1 text-end"><button className='btn btn-outline-danger' onClick={() => handleDelete(cita._id)}><i className="fa-solid fa-trash" ></i></button></div>
-                                    </div>
-                                </li> 
-                                )
-                        })
-                    }
-                </ul>
+                                                <div className="col small">{cita.fechaHoraI.substring(8, 10)}-{cita.fechaHoraI.substring(5, 7)}-{cita.fechaHoraI.substring(0, 4)} / {cita.fechaHoraI.substring(11)}-{cita.fechaHoraF.substring(11)}</div>
+                                                <div className="col small">{cita.paciente}</div>
+                                                <div className="col small">{cita.médico}</div>
+                                                <div className="col-1 small">{cita.consultorio}</div>
+                                                <div className="col small">{cita.asunto}</div>
+                                                <div className="col-1 small"><span className={`badge py-2 text-bg-${colorBadge}`}>{cita.status}</span></div>
+                                                <div className="col-1 text-end"><button className='btn btn-outline-secondary'><i className="fa-solid fa-pencil"></i></button></div>
+                                                <div className="col-1 text-end"><button className='btn btn-outline-danger' onClick={() => handleDelete(cita._id)}><i className="fa-solid fa-trash" ></i></button></div>
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+                
+
+               
             </div>
+
+
 
 
 
@@ -158,15 +180,8 @@ function Table_Citas(props) {
                     <Form_Citas dummy={props.dummy} />
                 </div>
             </div>
-            {/* MODAL VISTA DIARIA */}
-            <div className="modal fade" id="todayView" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable" style={{maxWidth: 1600}}>
-                    <div className="modal-content container-fluid p-4" >
-                        <Chart_Citas dummy={props.dummy} />
-                    </div>
-                </div>
-            </div>
-          
+
+
 
         </div>
     )

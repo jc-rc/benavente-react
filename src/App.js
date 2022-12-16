@@ -20,9 +20,7 @@ function App() {
     e.preventDefault()
 
     //Enviar datos a validar
-    console.log(user);
-
-    fetch(`https://us-central1.gcp.data.mongodb-api.com/app/benavente-jinwz/endpoint/validateUser?username=${user.username}&password=${user.password}`)
+      fetch(`https://us-central1.gcp.data.mongodb-api.com/app/benavente-jinwz/endpoint/validateUser?username=${user.username}&password=${user.password}`)
       .then(response => response.json())
       .then(response => {
         if (response.length === 0) {
