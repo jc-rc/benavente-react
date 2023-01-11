@@ -23,7 +23,7 @@ function Table_Usuarios(props) {
 
 <div className="row d-flex align-items-center">
         <div className="col">
-          <p className="h2 m-0">Directorio</p>
+          <p className="h2 m-0">Directorio Pacientes</p>
         </div>
         {/* <div className="col-5 p-0 m-0">
           <div className="input-group input-group">
@@ -39,6 +39,10 @@ function Table_Usuarios(props) {
       </div>
 
       <div className="row">
+        <p className="h5 mb-3">Total: {data.length}</p>
+      </div>
+
+      <div className="row">
         <div className="col-1">ID</div>
         <div className="col-4">Paciente</div>
         <div className="col-1">Nivel</div>
@@ -47,7 +51,7 @@ function Table_Usuarios(props) {
         
       </div>
 
-      <div className="list-group" style={{ overflowY: "scroll", height: "55vh" }}>
+      <div className="list-group" style={{ overflowY: "scroll", height: "60vh" }}>
         {data && data.map((paciente, key) =>{
 
 
@@ -58,13 +62,13 @@ function Table_Usuarios(props) {
                         <p className="m-0 py-2 small">{paciente.idInt}</p>
                     </div>
                     <div className="col-4">
-                        <p className="m-0 py-2 small">{paciente.nombre} {paciente.aPaterno} {paciente.aMaterno}</p>
+                        <p className="m-0 py-2 small fw-bold">{paciente.nombre} {paciente.aPaterno} {paciente.aMaterno}</p>
                     </div>
                     <div className="col-1">
                         <p className="m-0 py-2 small">{paciente.nivelReward}</p>
                     </div>
                     <div className="col-1">
-                        <p className="m-0 py-2 small">{paciente.puntos}</p>
+                        <p className="m-0 py-2 fw-bold">{paciente.puntos}</p>
                     </div>
                     <div className="col">
                         <p className="m-0 py-2 small">{paciente.username}</p>

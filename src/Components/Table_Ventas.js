@@ -45,11 +45,15 @@ function Table_Ventas(props) {
         </div>
         <hr className='my-4' />
       </div>
+      <div className="row">
+        <p className='h5 mb-3'>Total: {data.length}</p>
+      </div>
 
       <div className="row">
         <div className="col-2">Fecha</div>
-        <div className="col-3">Paciente</div>
+        <div className="col-2">Paciente</div>
         <div className="col-1">Nivel</div>
+        <div className="col-1">Consultorio</div>
         <div className="col">Pago</div>
         <div className="col">Venta</div>
         <div className="col">Puntos</div>
@@ -90,8 +94,9 @@ function Table_Ventas(props) {
           return (
             <div className="list-group-item row d-flex px-0" key={key}>
               <div className="col-2"><p className='m-0 py-2 small'>{venta.fechaHora.substring(8, 10)}-{venta.fechaHora.substring(5, 7)}-{venta.fechaHora.substring(0, 4)} / {venta.fechaHora.substring(11)}</p></div>
-              <div className="col-3"><p className='m-0 py-2 small'>{venta.paciente}</p></div>
+              <div className="col-2"><p className='m-0 py-2 small'>{venta.paciente}</p></div>
               <div className="col-1"><p className='m-0 py-2 small'>{venta.nivel}</p></div>
+              <div className="col-1"><p className='m-0 py-2 small'>{venta.consultorio}</p></div>
               <div className="col"><p className='m-0 py-2 small'><span className={"badge text-bg-" + colorPago}>{venta.pago}</span></p></div>
               <div className="col"><p className='m-0 py-2 small'>${venta.venta}</p></div>
               <div className="col"><p className={'m-0 py-2 small text-' + colorText}>{prefixPuntos}{venta.puntos}</p></div>

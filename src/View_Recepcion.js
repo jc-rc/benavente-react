@@ -62,23 +62,23 @@ function View_Recepcion(props) {
                                 <div className="col-2 text-center border p-3">
                                 <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=639757cf-6a27-4560-84ec-e16f3e922ce4&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-2 border p-3">
+                                <div className="col-2 border p-1">
                                 <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=63b84f68-f194-48a0-8d10-7f8e538c094a&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-2 border p-3">
-                                    <p className='m-0'>Puntos Redimidos</p>
+                                <div className="col-2 border p-1">
+                                <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=465f3638-0219-4e5b-8455-7906860583ec&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-2 border p-3">
-                                    <p className='m-0'>Recuento de Venta$</p>
+                                <div className="col-2 border p-1">
+                                <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=63b84e34-4545-48c6-8fa5-848d95073d89&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-2 border p-3">
-                                    <p className='m-0'>Recuento de Ventas</p>
+                                <div className="col-2 border p-1">
+                                <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=63bee7ac-14d0-4c0b-8403-ec4c7af59ce1&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-6 border p-3">
+                                <div className="col-6 border p-1">
                                 <iframe style={{}} width="100%" height="350px" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=63b84948-f194-4f39-8fc0-7f8e5386b091&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-6 border p-3">
-                                <p>Donut de Ventas por Status</p>
+                                <div className="col-6 border p-1">
+                                <iframe style={{}} width="100%" height="350px" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=00b339ba-dfe0-4eb3-98fe-b8b4b739d66f&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ function View_Recepcion(props) {
                              <div className="row text-start">
                                 <div className="col-12">
                                 <p className="h2 mb-4">Opciones</p>
-                                <Test_Comp/>
+                                
                                 </div>
                             </div>
                         </div>

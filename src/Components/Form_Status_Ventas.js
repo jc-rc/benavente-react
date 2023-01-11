@@ -17,7 +17,7 @@ function Form_Status_Ventas(props) {
         fetch(`https://us-central1.gcp.data.mongodb-api.com/app/benavente-jinwz/endpoint/consolidarVenta?_id=${form._id}&_idP=${form._idP}&pago=${form.pago}&status=${form.status}&puntos=${form.puntos}`,
             { method: "PUT" })
             .then(response => response.json())
-            .then(response => response.status === 200 ? alert("VENTA CONSOLIDADA") : alert("ALGO SALIÓ MAL"))
+            .then(response => response ? alert("VENTA CONSOLIDADA") : alert("ALGO SALIÓ MAL"))
             .then(document.querySelector("#form-status-venta").reset())
             .then(document.querySelector(".btn-close-venta-status").click())
         .then(setTimeout(() => {
