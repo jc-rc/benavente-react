@@ -51,9 +51,9 @@ function Table_Citas(props) {
 
 
     return (
-        <div className='row'>
+        <div className=''>
 
-            <div className="row d-flex justify-items-evenly align-items-center ">
+            <div className="row d-flex align-items-center ">
                 <div className="col">
                     <p className="h2 m-0 ">Citas</p>
                 </div>
@@ -65,32 +65,32 @@ function Table_Citas(props) {
                 </div>
 
 
-                <div className="col align-items-center me-2">
+                <div className="col align-items-center">
                     <button className="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        <i className="fa-solid fa-circle-plus me-1"></i> Nueva Cita</button>
+                        <i className="fa-solid fa-circle-plus me-1"></i> NUEVA CITA</button>
                 </div>
                 <hr className='my-4' />
             </div>
 
             {/* NAVEGACIÓN */}
-            <ul class="nav nav-pills mb-3 px-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-calendar-days me-2"></i>Calendario</button>
+            <ul className="nav nav-pills mb-3 " id="pills-tab" role="tablist">
+                <li className="nav-item" role="presentation">
+                    <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i className="fa-solid fa-calendar-days me-2"></i>Calendario</button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-table-list me-2"></i>Listado</button>
+                <li className="nav-item" role="presentation">
+                    <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i className="fa-solid fa-table-list me-2"></i>Listado</button>
                 </li>
             </ul>
 
             {/* CONTENIDO PESTAÑAS */}
-            <div class="tab-content" id="pills-tabContent">
+            <div className="tab-content" id="pills-tabContent">
 
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabIndex="0">
                     <Chart_Month_Citas dummy={props.dummy} data={data} />
                 </div>
                 
 
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabIndex="0">
 
                     
                     <div className="col d-flex align-items-start">
@@ -106,7 +106,7 @@ function Table_Citas(props) {
                             <div className="col-1 fw-bold">Sillón</div>
                             <div className="col fw-bold">Asunto</div>
                             <div className="col-1 fw-bold">STATUS</div>
-                            <div className="col-1 text-center fw-bold">Editar</div>
+                            {/* <div className="col-1 text-center fw-bold">Editar</div> */}
                             <div className="col-1 text-center fw-bold">Borrar</div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@ function Table_Citas(props) {
                                                 <div className="col-1 small">{cita.consultorio}</div>
                                                 <div className="col small">{cita.asunto}</div>
                                                 <div className="col-1 small"><span className={`badge py-2 text-bg-${colorBadge}`}>{cita.status}</span></div>
-                                                <div className="col-1 text-end"><button className='btn btn-outline-secondary'><i className="fa-solid fa-pencil"></i></button></div>
+                                                {/* <div className="col-1 text-end"><button className='btn btn-outline-secondary'><i className="fa-solid fa-pencil"></i></button></div> */}
                                                 <div className="col-1 text-end"><button className='btn btn-outline-danger' onClick={() => handleDelete(cita._id)}><i className="fa-solid fa-trash" ></i></button></div>
                                             </div>
                                         </li>

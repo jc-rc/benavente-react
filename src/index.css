@@ -45,8 +45,9 @@ code {
 }
 
 .fc .fc-button-primary {
-  background-color: #0d6efd!important;
+  background-color: #30C2E2!important;
   border-color: white!important;
+  
   border-radius: 0.5rem!important;
   
 }
@@ -55,3 +56,11 @@ code {
   height: 670px !important;
   max-height: 700px !important;
 } */
+
+.form-label{
+  margin-bottom: 5px!important;
+}
+
+[data-bs-target="#VentaStatusModal"] {
+  cursor: pointer;
+}

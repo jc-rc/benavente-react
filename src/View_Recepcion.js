@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Table_Citas from './Components/Table_Citas';
-import Chart_Citas from './Components/Chart_Citas';
-import Chart_Month_Citas from './Components/Chart_Month_Citas';
+import Table_Ventas from './Components/Table_Ventas';
+import Table_Usuarios from './Components/Table_Usuarios';
+import Test_Comp from './Components/Test_Comp';
 
 function View_Recepcion(props) {
 
@@ -45,7 +46,7 @@ function View_Recepcion(props) {
                         <button className="nav-link active text-start p-3" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><i className="fa-solid fa-chart-simple me-1"></i> Resumen</button>
                         <button className="nav-link text-start p-3" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false"><i className="fa-solid fa-calendar-check me-1"></i> Citas</button>
                         <button className="nav-link text-start p-3" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><i className="fa-solid fa-address-card me-1"></i> Directorio</button>
-                        <button className="nav-link text-start p-3" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i className="fa-solid fa-trophy me-1"></i> Puntos</button>
+                        <button className="nav-link text-start p-3" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i className="fa-solid fa-dollar-sign me-1"></i> Ventas</button>
                         <button className="nav-link text-start p-3" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><i className="fa-solid fa-gear me-1"></i> Opciones</button>
                     </div>
                    
@@ -55,30 +56,36 @@ function View_Recepcion(props) {
                                 <div className="col-12">
                                     <p className="h2 mb-4" >Dashboard</p>
                                 </div>
-                                <div className="col-3 text-center border p-3">
+                                <div className="col-2 text-center border p-3">
                                 <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=6392f49b-52ab-4463-8d3a-e91db375f7bd&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-3 text-center border p-3">
+                                <div className="col-2 text-center border p-3">
                                 <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=639757cf-6a27-4560-84ec-e16f3e922ce4&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-3 border p-3">
-                                    <p className='m-0'>Recuento de Puntos Otorgados</p>
+                                <div className="col-2 border p-3">
+                                <iframe style={{}} width="100%" height="100%" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=63b84f68-f194-48a0-8d10-7f8e538c094a&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
-                                <div className="col-3 border p-3">
+                                <div className="col-2 border p-3">
+                                    <p className='m-0'>Puntos Redimidos</p>
+                                </div>
+                                <div className="col-2 border p-3">
+                                    <p className='m-0'>Recuento de Venta$</p>
+                                </div>
+                                <div className="col-2 border p-3">
                                     <p className='m-0'>Recuento de Ventas</p>
                                 </div>
                                 <div className="col-6 border p-3">
-                                    <p className='m-0'>Gráficas</p>
+                                <iframe style={{}} width="100%" height="350px" src="https://charts.mongodb.com/charts-tutorial-tlnug/embed/charts?id=63b84948-f194-4f39-8fc0-7f8e5386b091&maxDataAge=60&theme=light&autoRefresh=true"></iframe>
                                 </div>
                                 <div className="col-6 border p-3">
-                                    <p className='m-0'>Gráficas</p>
+                                <p>Donut de Ventas por Status</p>
                                 </div>
                             </div>
                         </div>
                         <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex="0">
                             <div className="row text-start">
                                 <div className="col-12">
-                                    <p className="h2 mb-4">Directorio</p>
+                                    <Table_Usuarios dummy={dummy}/>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +100,7 @@ function View_Recepcion(props) {
                         <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex="0">
                              <div className="row text-start">
                                 <div className="col-12">
-                                <p className="h2 mb-4">Puntos</p>
+                                <Table_Ventas dummy={dummy}/>
                                 </div>
                             </div>
                         </div>
@@ -101,6 +108,7 @@ function View_Recepcion(props) {
                              <div className="row text-start">
                                 <div className="col-12">
                                 <p className="h2 mb-4">Opciones</p>
+                                <Test_Comp/>
                                 </div>
                             </div>
                         </div>

@@ -8,7 +8,7 @@ import { Modal } from 'bootstrap'
 
 function Chart_Month_Citas(props) {
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState(props.data)
     const [details, setDetails] = useState(null)
     const [statusUpdate, setStatusUpdate] = useState("")
     var colorOption = ""
@@ -22,7 +22,7 @@ function Chart_Month_Citas(props) {
     //     //Traer Todas las citas
        setData(props.data)
 
-     }, [props.dummy])
+     }, [props.dummy, props.data])
 
 
     const handleEventClick = (e) => {
@@ -125,7 +125,7 @@ function Chart_Month_Citas(props) {
                     }
                     return (
                         {
-                            title: "Sillón " + cita.consultorio,
+                            title: "Sillón " + cita.consultorio + " | " + cita.paciente,
                             start: cita.fechaHoraI,
                             end:cita.fechaHoraF,
                             fechaHoraI: cita.fechaHoraI,
