@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react'
+import { Calendar } from '@fullcalendar/core'
 import FullCalendar from "@fullcalendar/react"
 import dayGridPlugin from "@fullcalendar/daygrid"
 import timeGridPlugin from "@fullcalendar/timegrid"
+import interactionPlugin from "@fullcalendar/interaction"
 import esLocale from "@fullcalendar/core/locales/es"
 import { Modal } from 'bootstrap'
+
+import Form_Citas from './Form_Citas'
 
 
 function Chart_Month_Citas(props) {
 
     const [data, setData] = useState(props.data)
     const [details, setDetails] = useState(null)
+    const [date, setDate] = useState("")
     const [statusUpdate, setStatusUpdate] = useState("")
     var colorOption = ""
 
@@ -33,6 +38,14 @@ function Chart_Month_Citas(props) {
         const myModal = new Modal("#detailModal")
         myModal.show()
 
+    }
+
+    const handleDateClick = (e) =>{
+        console.log(e.dateStr);
+        setDate(e.dateStr)
+
+        const myModal = new Modal("#citaFormDate")
+        myModal.show()
     }
 
     const handleSubmitUpdate = (e) => {
@@ -88,7 +101,7 @@ function Chart_Month_Citas(props) {
                     center: "dayGridMonth,timeGridWeek,timeGridDay"
                 }}
                 height={600}
-                plugins={[dayGridPlugin, timeGridPlugin]}
+                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                 initialView="dayGridMonth"
                 weekends={true}
                 showNonCurrentDates={false}
@@ -144,7 +157,7 @@ function Chart_Month_Citas(props) {
                     )
                 })}
                 eventClick={handleEventClick}
-                // eventMouseEnter ={handleEventClick}
+                dateClick = {handleDateClick}
                 locale={esLocale}
                 buttonText={
                     { today: "HOY", month: "MES", week: "SEMANA", day: "DÍA"  }
@@ -204,6 +217,13 @@ function Chart_Month_Citas(props) {
                     </div>
                 </div>
             </div>}
+
+            {/* MODAL ADD CITA + DATE */}
+            <div className="modal fade" id="citaFormDate" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <Form_Citas dummy={props.dummy} event={date}/>
+                </div>
+            </div>
         </div>
 
     )

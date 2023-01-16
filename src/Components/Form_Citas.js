@@ -5,6 +5,7 @@ function Form_Citas(props) {
     const [pacienteOptions, setPacienteOptions] = useState([])
     const [médicoOptions, setMédicoOptions] = useState([])
     const [form, setForm] = useState({})
+    
 
 
     useEffect(() => {
@@ -21,6 +22,10 @@ function Form_Citas(props) {
             .then(console.log("Médicos Options Loaded!"))
 
     }, [props.dummy])
+
+    useEffect(()=>{
+        setForm({...form, fecha: props.event})
+    }, [props.event])
 
 
     const handleNewCita = (e) => {
@@ -88,7 +93,7 @@ function Form_Citas(props) {
                                     </div> */}
                         <div className="col-12 mb-3">
                             <label htmlFor="">Fecha:</label>
-                            <input type="date" className='form-control' onChange={handleFecha} required />
+                            <input type="date" className='form-control' onChange={handleFecha} value={props.event} required />
                         </div>
                         <div className="col-6 mb-3">
                             <label htmlFor="">Hora Inicio:</label>
