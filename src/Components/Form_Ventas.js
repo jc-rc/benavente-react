@@ -178,6 +178,7 @@ function Form_Ventas(props) {
             </div>
             <div className="col-10 mb-3">
               <label className='form-label' htmlFor="">Paciente:</label>
+              {/* <input className='form-select' list="paciente-select" onChange={handlePaciente} required placeholder='Busca...'/> */}
               <select className='form-select' name="" id="paciente-select" onChange={handlePaciente} required>
                 <option hidden value="">Selecciona..</option>
                 {pacienteOptions.map((paciente, key) => {

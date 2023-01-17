@@ -105,14 +105,15 @@ function Form_Citas(props) {
                         </div>}
                         <div className="col-12 mb-3">
                             <label className='form-label' htmlFor="">Paciente:</label>
-                            <select required className='form-select' name="" id="" onChange={handlePaciente}>
+                            <input className='form-select'  list="pacientes" onChange={handlePaciente} required placeholder='Busca...'/>
+                            <datalist required className='form-select d-none' name="" id="pacientes" onChange={handlePaciente}>
                                 <option hidden value="">Selecciona..</option>
                                 {pacienteOptions.map((paciente, key) => {
                                     return (
                                         <option key={key} value={paciente.nombre + " " + paciente.aPaterno + " " + paciente.aMaterno}>{paciente.nombre} {paciente.aPaterno} {paciente.aMaterno}</option>
                                     )
                                 })}
-                            </select>
+                            </datalist>
                         </div>
                         <div className="col-6 mb-3">
                             <label className='form-label' htmlFor="">Médico:</label>
